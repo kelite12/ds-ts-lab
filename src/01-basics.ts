@@ -1,27 +1,47 @@
-// (Optional) Change the names below to your friends.
+// Define the Friend interface for type safety
 interface Friend {
   name: string;
   phone: string;
-  age: number
+  age: number;
 }
 
-const friend1 = {
+// Define the Colleague interface for type safety
+interface Colleague {
+  name: string;
+  department: string;
+  contact: {
+    email: string;
+    extension: number;
+  };
+}
+
+// Define the ColleagueHistory interface for type safety
+interface ColleagueHistory {
+  current: Colleague[];
+  former: Colleague[];
+}
+
+// Define friend1 and friend2 with type Friend
+const friend1: Friend = {
   name: "Paul Fleming",
   phone: "087-12345",
   age: 25,
 };
 
-const friend2 = {
+const friend2: Friend = {
   name: "Jane Costello",
   phone: "086--12345",
   age: 31,
 };
 
-const friends = [friend1, friend2];
-console.log(friends[1]);
+// Define the friends array with type Friend[]
+const friends: Friend[] = [friend1, friend2];
+console.log(friends[1]); // Logs the second friend
 
-//   -------------------
-const colleague1 = {
+// -------------------
+
+// Define colleague1, colleague2, colleague3 with type Colleague
+const colleague1: Colleague = {
   name: "Ralph Graham",
   department: "Engineering",
   contact: {
@@ -30,7 +50,7 @@ const colleague1 = {
   },
 };
 
-const colleague2 = {
+const colleague2: Colleague = {
   name: "Patti Burke",
   department: "Finance",
   contact: {
@@ -39,7 +59,7 @@ const colleague2 = {
   },
 };
 
-const colleague3 = {
+const colleague3: Colleague = {
   name: "Dean Sullivan",
   department: "HR",
   contact: {
@@ -47,9 +67,11 @@ const colleague3 = {
     extension: 125,
   },
 };
-const colleagues = {
+
+// Define colleagues with type ColleagueHistory
+export const colleagues: ColleagueHistory = {
   current: [colleague1, colleague2, colleague3],
   former: [],
 };
 
-console.log(colleagues.current[0]);
+console.log(colleagues.current[0]); // Logs the first current colleague
