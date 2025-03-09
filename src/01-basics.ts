@@ -1,73 +1,50 @@
-// Interface for Friend
-interface Friend {
-  name: string;
-  phone: string;
-  age: number;
-}
+import { Friend, Colleague, ColleagueHistory } from './myTypes';
 
-// Interface for Colleague
-interface Colleague {
-  name: string;
-  department: string;
-  contact: {
-      email: string;
-      extension: number;
-  };
-}
-
-// Interface for ColleagueHistory
-interface ColleagueHistory {
-  current: Colleague[];
-  former: Colleague[];
-}
-
-// (Optional) Change the names below to your friends.
 const friend1: Friend = {
-  name: "Paul Fleming",
-  phone: "087-12345",
-  age: 25,
+    name: "Paul Fleming",
+    phone: "087-12345",
+    age: 25,
+    dob: new Date("1998-11-20"), // Added dob
 };
 
 const friend2: Friend = {
-  name: "Jane Costello",
-  phone: "086--12345",
-  age: 31,
+    name: "Jane Costello",
+    phone: "086--12345",
+    age: 31,
+    interests: ['Music', 'Sport'], // Added interests
 };
 
-const friends: Friend[] = [friend1, friend2];
-console.log(friends[1]);
+export const friends: Friend[] = [friend1, friend2];
 
-//   -------------------
+// -------------------
 const colleague1: Colleague = {
-  name: "Ralph Graham",
-  department: "Engineering",
-  contact: {
-      email: "rgraham@company.com",
-      extension: 121,
-  },
+    name: "Ralph Graham",
+    department: "Engineering",
+    contact: {
+        email: "rgraham@company.com",
+        extension: 121,
+    },
 };
 
 const colleague2: Colleague = {
-  name: "Patti Burke",
-  department: "Finance",
-  contact: {
-      email: "pburke@company.com",
-      extension: 132,
-  },
+    name: "Patti Burke",
+    department: "Finance",
+    contact: {
+        email: "pburke@company.com",
+        extension: 132,
+    },
 };
 
 const colleague3: Colleague = {
-  name: "Dean Sullivan",
-  department: "HR",
-  contact: {
-      email: "dos@company.com",
-      extension: 125,
-  },
+    name: "Dean Sullivan",
+    department: "HR",
+    contact: {
+        email: "dos@company.com",
+        extension: 125,
+    },
 };
 
-const colleagues: ColleagueHistory = {
-  current: [colleague1, colleague2, colleague3],
-  former: [],
+export const colleagues: ColleagueHistory = {
+    current: [colleague1, colleague2, colleague3],
+    former: [],
 };
-
-console.log(colleagues.current[0]);
